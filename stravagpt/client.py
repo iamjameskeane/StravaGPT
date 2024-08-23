@@ -233,6 +233,11 @@ class StravaGPT:
     def ask_question(self, question):
         self.messages.append({"role": "user", "content": question})
 
+        #start thinking
+        self.thinking_complete = False
+        self.loader_thread = threading.Thread(target=self._thinking_animation, daemon=True)
+        self.loader_thread.start()
+
         response = self.openai_client.chat.completions.create(
             model="gpt-4o",
             messages=self.messages,
@@ -241,11 +246,6 @@ class StravaGPT:
         )
 
         while response.choices[0].finish_reason == "tool_calls":
-            #start thinking
-            self.thinking_complete = False
-            self.loader_thread = threading.Thread(target=self._thinking_animation, daemon=True)
-            self.loader_thread.start()
-            
             self.messages = self.process_tool_calls(self.messages, response)
 
             response = self.openai_client.chat.completions.create(
@@ -255,9 +255,9 @@ class StravaGPT:
                 temperature=0.3
             )
             
-            #stop thinking
-            self.thinking_complete = True
-            self.loader_thread.join()
+        #stop thinking
+        self.thinking_complete = True
+        self.loader_thread.join()
         
         return response.choices[0].message.content
 
