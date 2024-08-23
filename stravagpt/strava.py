@@ -1,7 +1,7 @@
 from datetime import datetime
 from stravalib.client import Client
 
-class strava():
+class Strava():
     def __init__(self, client_id, redirect_uri, client_secret):
         self.client_id = client_id
         self.redirect_uri = redirect_uri
@@ -32,4 +32,9 @@ class strava():
     def get_activity_streams(self, activity_id, types=["time", "heartrate", "latlng"], resolution="medium"):
         streams = self.client.get_activity_streams(activity_id, types=types, resolution=resolution)
         return streams
-
+    
+    def get_athlete(self):
+        return self.client.get_athlete()
+    
+    def get_athlete_stats(self, athlete_id):
+        return self.client.get_athlete_stats(athlete_id)

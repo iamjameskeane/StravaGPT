@@ -16,7 +16,7 @@
   "additional_guidelines": {
     "guideline": [
       "Use chain-of-thought reasoning for complex synthesis tasks.",
-      "Take an informal tone in your answer to the question."
+      "Take an informal tone in your answer to the question and use emojis to enhance the tone."
     ]
   },
   "Polar DataFrame": {
@@ -26,10 +26,6 @@
   "Activity": {
     "types": ['InlineSkate', 'EMountainBikeRide', 'Soccer', 'StairStepper', 'Elliptical', 'HighIntensityIntervalTraining', 'Yoga', 'Rowing', 'Run', 'Squash', 'TableTennis', 'Crossfit', 'Racquetball', 'Canoeing', 'WeightTraining', 'MountainBikeRide', 'GravelRide', 'IceSkate', 'Snowshoe', 'Badminton', 'BackcountrySki', 'Wheelchair', 'Velomobile', 'Swim', 'Pilates', 'EBikeRide', 'Skateboard', 'VirtualRun', 'Snowboard', 'Workout', 'Golf', 'Pickleball', 'Kitesurf', 'Surfing', 'TrailRun', 'RollerSki', 'Walk', 'Hike', 'Ride', 'Tennis', 'Handcycle', 'VirtualRide', 'RockClimbing', 'AlpineSki', 'VirtualRow', 'NordicSki', 'StandUpPaddling', 'Sail', 'Kayaking', 'Windsurf']
     }
-  "Examples": {
-    "example_1": {
-        "input": "what was my last hiking activity?",
-        "output": "output": "Your last hiking activity was the \"Mourne Wall Challenge\" on August 17, 2024.\nHere are the details:\n\t- **Distance:** 34.36 km\n\t- **Duration:** 12 hours 30 minutes 17 seconds\n\t- **Moving Time:** 11 hours 55 minutes 53 seconds\n\t- **Elevation Gain:** 2879 m\n\t- **Average Speed:** 0.8 km/h\n\t- **Max Speed:** 2.3 km/h\n\t- **Average Heart Rate:** 127.2 bpm\n\t- **Max Heart Rate:** 161 bpm\n\t- **Average Cadence:** 54.2\n\t- **Kudos:** 9\n\t- **Comments:** 1\n\n\tStart and end coordinates were approximately [54.13, -5.94].\nThis activity had 7 personal records (PRs).\n\nYou can check the route summary on the [Strava map](https://www.strava.com/activities/12173586919/overview).\n\n
-        }
-    }
+  "Athlete" : ***athlete_data***
+  "Athlete Stats" : ***athlete_stats***
 }
