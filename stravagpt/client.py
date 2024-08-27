@@ -169,7 +169,7 @@ class StravaGPT:
                 try:
                     result = str(self.query_data(sql_query).to_dicts())
                 except Exception as e:
-                    result = {"error": str(e)}
+                    result = {"Error": str(e)}
 
                 tool_call_result_message = {
                     "role": "tool",

@@ -1,7 +1,6 @@
 from stravagpt import StravaGPT
 
 
-
 def main():
     client_id = open("keys/strava_client_id.key").read().strip()
     client_secret = open("keys/strava_client_secret.key").read().strip()
