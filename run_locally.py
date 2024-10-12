@@ -1,4 +1,4 @@
-from stravagpt import StravaGPT
+from client import StravaGPT
 
 
 def main():

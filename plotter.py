@@ -2,17 +2,21 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
 
-def create_route_plot(lnglat_data, mapbox_access_token, zoom, output_file='route_map.jpg'):
+def create_route_plot(lnglat_data, mapbox_access_token, zoom):
     """
     Plot a route based on a stream of longitude and latitude data.
     
     Parameters:
-    lnglat_data: list of tuples
+    lnglat_list
         A list of (latitude, longitude) tuples.
     mapbox_access_token: str
         Your Mapbox access token.
-    output_file: str
-        The path and file name to save the output image.
+    zoom: int
+        The zoom level for the map.
+    
+    Returns:
+    fig: plotly.graph_objects.Figure
+        The Plotly figure object containing the route plot.
     """
     
     # Check if the data is empty
@@ -33,13 +37,14 @@ def create_route_plot(lnglat_data, mapbox_access_token, zoom, output_file='route
         center={'lat': df['lat'].mean(), 'lon': df['lng'].mean()},
     )
     
-    fig.update_layout(mapbox_style="streets", mapbox_accesstoken=mapbox_access_token)
-    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+    fig.update_layout(
+        mapbox_style="streets",
+        mapbox_accesstoken=mapbox_access_token,
+        margin={"r":0,"t":0,"l":0,"b":0}
+    )
     
-    # Save the map as a static image
-    fig.write_image(output_file, format='png')
-    
-    return output_file
+    # Return the Plotly figure instead of saving it
+    return fig
 
 def plot_heart_rate_and_altitude(time_stream, heart_rate_stream, altitude_stream=None, output_file='heart_rate_altitude_plot.jpg'):
     """

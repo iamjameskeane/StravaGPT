@@ -88,6 +88,46 @@ tools = [
         },
     }
 },
+{
+    "type": "function",
+    "function": {
+        "name": "get_activity_photos",
+        "description": "Get the urls of photos for an activty",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "activity_id": {
+                    "type": "string",
+                    "description": "The ActivityID of the activity to plot, this is a numeric value",
+                },
+                "max_resolution": {
+                    "type": "integer",
+                    "description": "The maximum resolution of the photos to return",
+                },
+            },
+            "required": ["activity_id"],
+            "additionalProperties": False,
+        },
+    }
+},
+{
+    "type": "function",
+    "function": {
+        "name": "search",
+        "description": "Search Internet Using Tavily API",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The query to search for",
+                },
+            },
+            "required": ["query"],
+            "additionalProperties": False,
+        },
+    }
+}
 ]
 
 banner = r"""
