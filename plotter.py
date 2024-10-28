@@ -35,6 +35,7 @@ def create_route_plot(lnglat_data, mapbox_access_token, zoom):
         lon='lng',
         zoom=zoom,
         center={'lat': df['lat'].mean(), 'lon': df['lng'].mean()},
+        color_discrete_sequence=['orange']
     )
     
     fig.update_layout(

@@ -1,0 +1,10 @@
+stravalib
+plotly
+pandas
+streamlit
+python-dotenv
+polars
+openai
+requests
+tavily-python
+kaleido
